@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/star.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Survey Role | Programming Languange | Framework</title>
+  </head>
+
+  <body>
+    <!-- <div id="app"></div> -->
+    <!-- component -->
+    <!-- Code on GiHub: https://github.com/vitalikda/form-floating-labels-tailwindcss -->
+    <style>
+      .-z-1 {
+        z-index: -1;
+      }
+
+      .origin-0 {
+        transform-origin: 0%;
+      }
+
+      input:focus ~ label,
+      input:not(:placeholder-shown) ~ label,
+      textarea:focus ~ label,
+      textarea:not(:placeholder-shown) ~ label,
+      select:focus ~ label,
+      select:not([value=""]):valid ~ label {
+        /* @apply transform; scale-75; -translate-y-6; */
+        --tw-translate-x: 0;
+        --tw-translate-y: 0;
+        --tw-rotate: 0;
+        --tw-skew-x: 0;
+        --tw-skew-y: 0;
+        transform: translateX(var(--tw-translate-x))
+          translateY(var(--tw-translate-y)) rotate(var(--tw-rotate))
+          skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+          scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+        --tw-scale-x: 0.75;
+        --tw-scale-y: 0.75;
+        --tw-translate-y: -1.5rem;
+      }
+
+      input:focus ~ label,
+      select:focus ~ label {
+        /* @apply text-black; left-0; */
+        --tw-text-opacity: 1;
+        color: rgba(0, 0, 0, var(--tw-text-opacity));
+        left: 0px;
+      }
+    </style>
+
+    <!-- bg-[#D8DEE9]
+    bg-[#2E3440] -->
+
+    <div
+      class="min-h-screen bg-[#2E3440] p-0 sm:p-12 text-[#2E3440] flex justify-center items-center"
+    >
+      <div
+        class="mx-auto max-w-2xl px-12 pb-12 pt-6 bg-[#D8DEE9] border-0 shadow-lg sm:rounded-3xl"
+      >
+        <h1 class="text-2xl font-bold mb-2 text-center">Survey</h1>
+        <h1 class="text-2xl font-bold mb-8 text-center">
+          Role | Programming Languange | Framework
+        </h1>
+        <form id="form" method="post" name="survey-form">
+          <div class="relative z-0 w-full mb-5">
+            <input
+              type="text"
+              name="name"
+              placeholder=""
+              required
+              class="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300"
+            />
+            <label
+              for="name"
+              class="absolute duration-300 top-3 -z-1 origin-0 text-gray-500"
+              >Nama atau alias</label
+            >
+            <span class="text-sm text-red-600 hidden" id="error"
+              >Nama wajib diisi</span
+            >
+          </div>
+
+          <div class="relative z-0 w-full mb-5">
+            <input
+              type="email"
+              name="email"
+              placeholder=" "
+              required
+              class="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300"
+            />
+            <label
+              for="email"
+              class="absolute duration-300 top-3 -z-1 origin-0 text-gray-500"
+              >Email</label
+            >
+            <span class="text-sm text-red-600 hidden" id="error"
+              >Email wajib diisi</span
+            >
+          </div>
+
+          <fieldset class="relative z-0 w-full p-px mb-5 mt-10" required>
+            <legend
+              class="absolute text-gray-500 transform scale-75 -top-3 origin-0"
+            >
+              Pilih salah satu role
+            </legend>
+            <div class="block pt-3 pb-2 space-x-4">
+              <label>
+                <input
+                  type="radio"
+                  name="role"
+                  value="backend"
+                  required
+                  class="mr-2 text-black border-2 border-gray-300 focus:border-gray-300 focus:ring-black"
+                />
+                Backend
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="role"
+                  value="frontend"
+                  required
+                  class="mr-2 text-black border-2 border-gray-300 focus:border-gray-300 focus:ring-black"
+                />
+                Frontend
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="role"
+                  value="fullstack"
+                  required
+                  class="mr-2 text-black border-2 border-gray-300 focus:border-gray-300 focus:ring-black"
+                />
+                Fullstack
+              </label>
+            </div>
+            <span class="text-sm text-red-600 hidden" id="error"
+              >Silahkan pilih salah satu</span
+            >
+          </fieldset>
+
+          <div class="relative z-0 w-full mb-5">
+            <select
+              required
+              name="language"
+              value=""
+              onclick="this.setAttribute('value', this.value);"
+              class="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-300"
+            >
+              <option value="" selected disabled hidden></option>
+              <option value="javascript">Javascript</option>
+              <option value="typescript">Typescript</option>
+              <option value="java">Java</option>
+              <option value="kotlin">Kotlin</option>
+              <option value="python">Python</option>
+              <option value="php">PHP</option>
+              <option value="go">GO</option>
+              <option value="rust">Rust</option>
+              <option value="c">C</option>
+              <option value="ocaml">OCaml</option>
+            </select>
+            <label
+              for="language"
+              class="absolute duration-300 top-3 -z-1 origin-0 text-gray-500"
+              >Programming language</label
+            >
+            <span class="text-sm text-red-600 hidden" id="error"
+              >Pilih salah satu programming language</span
+            >
+          </div>
+
+          <div class="relative z-0 w-full mb-5">
+            <select
+              required
+              name="framework"
+              value=""
+              onclick="this.setAttribute('value', this.value);"
+              class="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-300"
+            >
+              <option value="" selected disabled hidden></option>
+              <option value="reactjs">Reactjs</option>
+              <option value="nextjs">Nextjs</option>
+              <option value="nuxt">Nuxt</option>
+              <option value="sevltekit">SvelteKit</option>
+              <option value="remix">Remix</option>
+              <option value="laravel">Laravel</option>
+              <option value="angular">Angular</option>
+              <option value="solid">Solid</option>
+              <option value="astro">Astro</option>
+              <option value="django">Django</option>
+            </select>
+            <label
+              for="framework"
+              class="absolute duration-300 top-3 -z-1 origin-0 text-gray-500"
+              >Framework</label
+            >
+            <span class="text-sm text-red-600 hidden" id="error"
+              >Pilih salah satu framework</span
+            >
+          </div>
+
+          <input
+            id="submit"
+            type="submit"
+            value="Submit"
+            class="w-full px-6 py-3 mt-3 text-lg text-white transition-all duration-150 ease-linear rounded-lg shadow outline-none bg-[#2E3440] hover:bg-slate-500 hover:shadow-lg focus:outline-none"
+          />
+        </form>
+      </div>
+      <div
+        id="message"
+        class="bg-[#D8DEE9] fixed z-10 top-0 mt-8 px-4 rounded-lg text-center"
+      ></div>
+    </div>
+
+    <script>
+      document.getElementById("form").addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent the default form submission
+        const submitButton = document.getElementById("submit");
+        const message = document.getElementById("message");
+        const currentColor = submitButton.style.backgroundColor;
+
+        message.textContent = "Submitting...";
+        message.style.paddingTop = "0.5rem";
+        message.style.paddingBottom = "0.5rem";
+        // message.style.display = "block";
+
+        submitButton.disabled = true;
+        submitButton.style.cursor = "not-allowed";
+        submitButton.style.opacity = "0.5";
+        submitButton.style.backgroundColor = "gray";
+
+        // Collect the form data
+        var formData = new FormData(this);
+        var keyValuePairs = [];
+        for (var pair of formData.entries()) {
+          keyValuePairs.push(pair[0] + "=" + pair[1]);
+        }
+
+        var formDataString = keyValuePairs.join("&");
+
+        console.log(formDataString);
+
+        // Send a POST request to your Google Apps Script
+        fetch(
+          "https://script.google.com/macros/s/AKfycbz9uY9Wb8BFbg2bzhyHLWnNS0-0ZIyvySyr3hfpTd6CHxxpqI3aAewwvQYsj4U-Y16n/exec",
+          {
+            redirect: "follow",
+            method: "POST",
+            body: formDataString,
+            headers: {
+              "Content-Type": "text/plain;charset=utf-8",
+            },
+          }
+        )
+          .then(function (response) {
+            // Check if the request was successful
+            if (response) {
+              return response; // Assuming your script returns JSON response
+            } else {
+              throw new Error("Failed to submit the form.");
+            }
+          })
+          .then(function (data) {
+            // Display a success message
+            message.textContent = "Data submitted successfully!";
+            // message.style.display = "block";
+            // message.style.backgroundColor = "#006A4E";
+            message.style.color = "#018749";
+            message.style.paddingTop = "0.5rem";
+            message.style.paddingBottom = "0.5rem";
+            message.style.fontWeight = "bold";
+
+            submitButton.disabled = false;
+            submitButton.style.backgroundColor = currentColor;
+            submitButton.style.cursor = "pointer";
+            submitButton.style.opacity = "1";
+            document.getElementById("form").reset();
+
+            setTimeout(function () {
+              message.textContent = "";
+              message.style.display = "none";
+            }, 2600);
+          })
+          .catch(function (error) {
+            // Handle errors, you can display an error message here
+            console.error(error);
+            message.textContent =
+              "An error occurred while submitting the form.";
+            message.style.display = "block";
+          });
+      });
+    </script>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
